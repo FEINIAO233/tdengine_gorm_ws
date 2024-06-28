@@ -4,7 +4,7 @@ import (
 	"database/sql"
 	"errors"
 	"fmt"
-	_ "github.com/taosdata/driver-go/v2/taosSql"
+	_ "github.com/taosdata/driver-go/v3/taosWS"
 	"gorm.io/gorm"
 	"gorm.io/gorm/callbacks"
 	"gorm.io/gorm/clause"
@@ -14,7 +14,7 @@ import (
 )
 
 // DriverName is the default driver name for TDengine.
-const DriverName = "taosSql"
+const DriverName = "taosWS"
 
 type Dialect struct {
 	DriverName string
@@ -89,6 +89,7 @@ func (dialect Dialect) ClauseBuilders() map[string]clause.ClauseBuilder {
 		},
 	}
 }
+
 func (dialect Dialect) DefaultValueOf(field *schema.Field) clause.Expression {
 	return clause.Expr{SQL: "NULL"}
 }

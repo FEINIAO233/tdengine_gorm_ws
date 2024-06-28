@@ -2,8 +2,8 @@ package window_test
 
 import (
 	"fmt"
-	"github.com/taosdata/tdengine_gorm/clause/tests"
-	"github.com/taosdata/tdengine_gorm/clause/window"
+	"github.com/FEINIAO233/tdengine_gorm_ws/clause/tests"
+	"github.com/FEINIAO233/tdengine_gorm_ws/clause/window"
 	"testing"
 	"time"
 
@@ -182,7 +182,7 @@ func TestNewDurationFromTimeDuration(t *testing.T) {
 	}
 }
 
-//ParseDuration
+// ParseDuration
 func TestParseDuration(t *testing.T) {
 	duration5Min, err := window.ParseDuration("5m")
 	if err != nil {

@@ -1,8 +1,8 @@
-module github.com/taosdata/tdengine_gorm
+module github.com/FEINIAO233/tdengine_gorm_ws
 
 go 1.13
 
 require (
-	github.com/taosdata/driver-go/v2 v2.0.0
-	gorm.io/gorm v1.21.12
+	github.com/taosdata/driver-go/v3 v3.5.5
+	gorm.io/gorm v1.25.10
 )

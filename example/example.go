@@ -2,11 +2,11 @@ package main
 
 import (
 	"database/sql"
-	"github.com/taosdata/tdengine_gorm"
-	"github.com/taosdata/tdengine_gorm/clause/create"
-	"github.com/taosdata/tdengine_gorm/clause/fill"
-	"github.com/taosdata/tdengine_gorm/clause/using"
-	"github.com/taosdata/tdengine_gorm/clause/window"
+	"github.com/FEINIAO233/tdengine_gorm_ws"
+	"github.com/FEINIAO233/tdengine_gorm_ws/clause/create"
+	"github.com/FEINIAO233/tdengine_gorm_ws/clause/fill"
+	"github.com/FEINIAO233/tdengine_gorm_ws/clause/using"
+	"github.com/FEINIAO233/tdengine_gorm_ws/clause/window"
 	"gorm.io/gorm"
 	"gorm.io/gorm/clause"
 	"log"
