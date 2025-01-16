@@ -4,6 +4,7 @@ import (
 	"database/sql"
 	"errors"
 	"fmt"
+
 	_ "github.com/taosdata/driver-go/v3/taosWS"
 	"gorm.io/gorm"
 	"gorm.io/gorm/callbacks"
@@ -43,6 +44,7 @@ func (dialect Dialect) Initialize(db *gorm.DB) (err error) {
 		QueryClauses:         []string{"SELECT", "FROM", "WHERE", "WINDOW", "FILL", "GROUP BY", "ORDER BY", "SLIMIT", "LIMIT"},
 		CreateClauses:        []string{"CREATE TABLE", "INSERT", "USING", "VALUES", "ON CONFLICT"},
 	})
+	db.Callback().Create().Replace("gorm:create", dialect.Create)
 	if dialect.Conn != nil {
 		db.ConnPool = dialect.Conn
 	} else {
