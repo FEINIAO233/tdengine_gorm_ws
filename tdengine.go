@@ -107,7 +107,7 @@ func (dialect Dialect) Migrator(db *gorm.DB) gorm.Migrator {
 func (dialect Dialect) BindVarTo(writer clause.Writer, stmt *gorm.Statement, v interface{}) {
 	switch v.(type) {
 	case string:
-		writer.WriteString("'?'")
+		writer.WriteString("?")
 	default:
 		writer.WriteByte('?')
 	}
@@ -115,7 +115,6 @@ func (dialect Dialect) BindVarTo(writer clause.Writer, stmt *gorm.Statement, v i
 
 func (dialect Dialect) QuoteTo(writer clause.Writer, str string) {
 	writer.WriteString(str)
-	return
 }
 
 func (dialect Dialect) Explain(sql string, vars ...interface{}) string {
